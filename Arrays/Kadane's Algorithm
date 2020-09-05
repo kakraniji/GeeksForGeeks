@@ -1,0 +1,38 @@
+//first approach is brute force considering all the subarrays of all size starting from i=0!
+//Time Complexity is o(n2)
+
+int maxSum(int arr[],int n)
+{
+	int res=arr[0];
+	for(int i=0;i<n;i++)
+	{
+		int curr=0;
+		for(int j=i;j<n;j++)
+		{
+			curr=curr+a[j];
+			res=max(res,curr);
+		}
+	}
+	return res;
+	
+}
+
+//second approach !! efficient solution o(n) time approach!!
+
+//two choice !!
+
+//1. increase the size of previous subarray !!
+//2. or start the new subarray !!
+
+int maxSum(int arr[],int n)
+{
+	int maxEnding=arr[0];
+	int res=arr[0];
+        //kadane's ka loop 1 se hi shuru hota he !!
+	for(int i=1;i<n;i++)
+	{
+		maxEnding=max(maxEnding+arr[i],arr[i]);
+		res=max(res,maxEnding);
+	}
+	return res;
+}
