@@ -35,15 +35,15 @@ void printD(int n)
 
 // is Array Sorted or not ??
 
-bool isSorted(int a[],int n)
+bool isSorted(int a[],int i,int n)
 {
-	if(n==0)
+	if(i==n-1)
 	return true;
 	
-	if(a[n-1]>a[n])
+	if(a[i]>a[i+1])
 	return false;
 	
-	return isSorted(a,n-1);
+	return isSorted(a,i+1,n);
 	
 }
 
