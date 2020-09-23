@@ -20,6 +20,8 @@ int allOcc(int a[],int i,int n,int j,int key,int op[])
 	
 }
 
+//second method vector bana globally or usme indices store karate jao and akhri me use print kara lo!!!
+
 int main()
 {
 	int n;
