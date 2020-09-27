@@ -25,5 +25,5 @@ int main()
 	
 	int n,m;
 	cin>>n>>m;
-	printMazePath(1,1,n,m);
+	printMazePath(1,1,n,m."");
 }
