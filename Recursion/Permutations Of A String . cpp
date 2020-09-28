@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<string>v;
+void permutations(string s,string ans)
+{
+    if(s.size()==0)
+    {
+        v.push_back(ans);
+        return;
+    }
+    
+    for(int i=0;i<s.size();i++)
+    {
+        char op=s[i];
+        
+        string lp=s.substr(0,i);
+        
+        string rp=s.substr(i+1);
+        
+        string roq=lp+rp;
+        permutations(roq,ans+op);
+    }
+}
+int main() {
+	int t;
+	cin>>t;
+	
+	while(t--)
+	{
+	    string s;
+	    cin>>s;
+	    permutations(s,"");
+	    sort(v.begin(),v.end());
+	    for(auto x: v)
+	    cout<<x<<" ";
+	    cout<<endl;
+	    v.clear();
+	}
+	return 0;
+}
