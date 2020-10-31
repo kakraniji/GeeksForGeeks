@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-char casechange(char ch)
+char uppercase(char ch)
 {
     ch=ch-32;
     return ch;
@@ -17,7 +17,7 @@ void solve(string s,string ans)
     char ch=s[0];
     string roq=s.substr(1);
     
-    solve(roq,ans+casechange(ch));
+    solve(roq,ans+uppercase(ch));
     solve(roq,ans+ch);
 }
 int main() {
